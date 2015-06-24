@@ -1,12 +1,13 @@
 package com.levik.patterns.thread;
 
 import java.util.Calendar;
+import java.util.concurrent.TimeUnit;
 
 public class WorkerProcess implements Runnable{
 
     private volatile boolean flag;
 
-    private static final long MILLIS = 1000l;
+    private static final long MILLIS = 5l;
 
     @Override
     public void run() {
@@ -24,7 +25,7 @@ public class WorkerProcess implements Runnable{
 
     private void sleep(long millis){
         try {
-            Thread.sleep(millis);
+            TimeUnit.SECONDS.sleep(millis);
         } catch (InterruptedException exe) {
             System.err.println("Some error exe " + exe.getMessage());
         }

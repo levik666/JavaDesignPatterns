@@ -1,8 +1,10 @@
 package com.levik.patterns.thread;
 
+import java.util.concurrent.TimeUnit;
+
 public class ThreadRunner {
 
-    private static final long MILLIS = 10000l;
+    private static final long SECONDS = 30l;
 
     public static void main(String[] args) throws InterruptedException {
         final WorkerProcess workerProcess = new WorkerProcess();
@@ -12,7 +14,7 @@ public class ThreadRunner {
         final Thread currentThread = Thread.currentThread();
         currentThread.setName("currentThread");
 
-        Thread.sleep(MILLIS);
+        TimeUnit.SECONDS.sleep(SECONDS);
 
         workerProcess.terminate();
 

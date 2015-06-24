@@ -8,11 +8,11 @@ public class UserImpl extends User {
 
     @Override
     public void send(String msg){
-        System.out.println(this.name+": Sending Message="+msg);
+        System.out.println(name + ": Sending Message="+msg);
         mediator.sendMessage(msg, this);
     }
     @Override
     public void receive(String msg) {
-        System.out.println(this.name+": Received Message:"+msg);
+        System.out.println(name + ": Received Message:"+msg);
     }
 }
